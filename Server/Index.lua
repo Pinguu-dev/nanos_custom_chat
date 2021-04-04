@@ -1,4 +1,4 @@
-Events:on("Chat_SV_CheckMessage", function(player, message)
+Events:Subscribe("Chat_SV_CheckMessage", function(player, message)
 	local new_message = "<b>".. player:GetName() .."</b>: ".. message
 	Events:BroadcastRemote("Chat_SendMessage", { new_message })
 	
@@ -11,7 +11,7 @@ end)
 -- CommnandsHandler (Server Side)
 local commands = {}
 
-Events:on("Chat_SV_CommandExecute", function(player, command)
+Events:Subscribe("Chat_SV_CommandExecute", function(player, command)
 	print(player:GetName() .." calls command ".. command)
 	
 	if commands[command] then
