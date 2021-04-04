@@ -22,7 +22,7 @@ Example for CommandHandler with the new ChatUI
 ```LUA
 local commands = {}
 
-Events:on("Chat_SV_CommandExecute", function(player, command)
+Events:Subscribe("Chat_SV_CommandExecute", function(player, command)
 	print(player:GetName() .." calls command ".. command)
 	
 	if commands[command] then
